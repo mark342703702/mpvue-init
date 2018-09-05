@@ -1,42 +1,40 @@
 <template>
   <div class="counter-warp">
-    <p>Vuex counter：{{ count }}</p>
-    <p>
-      <button @click="increment">+</button>
-      <button @click="decrement">-</button>
-    </p>
-
-    <a href="/pages/index/main" class="home">去往首页</a>
-    <navigator
-            target="miniProgram" open-type="navigate"
-            app-id="wx82ad24f0812d8860" path="pages/test/main" version="develop">
-            跳转到小程序A
-        </navigator>
+    <p>{{title}} ：{{ count }}</p>
+    <button @click="increment">增加1</button>
+    <button @click="decrement">减少1</button>
   </div>
 </template>
 
 <script>
-// Use Vuex
-import store from './store'
-
 export default {
+  data () {
+    return {
+      title: "Vuex counter"
+    }
+  },
   computed: {
     count () {
-      return store.state.count
+      return this.$store.getters.GET_COUNT;
     }
   },
   methods: {
-    increment () {
-      store.commit('increment')
+    increment(){
+      this.$store.commit('increment')
     },
     decrement () {
-      store.commit('decrement')
+      this.$store.commit('decrement')
     }
+  },
+  mounted () {
+    console.log(this.$store)
   }
 }
 </script>
 
-<style>
+<style lang=scss>
+
+@import "@/common/css/base.scss";
 .counter-warp {
   text-align: center;
   margin-top: 100px;
@@ -45,7 +43,8 @@ export default {
   display: inline-block;
   margin: 100px auto;
   padding: 5px 10px;
-  color: blue;
-  border: 1px solid blue;
+  color: $page-bg;
+  border: 1px solid $page-bg;
 }
+
 </style>

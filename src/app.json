@@ -1,13 +1,29 @@
 {
   "pages": [
+    "pages/index/main",
     "pages/counter/main",
-    "pages/logs/main",
-    "pages/index/main"
+    "pages/logs/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#cf4646",
-    "navigationBarTitleText": "小程序A",
+    "navigationBarTitleText": "小程序",
     "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/main",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/logs/main",
+      "text": "日志"
+    }, {
+      "pagePath": "pages/counter/main",
+      "text": "计数器"
+    }],
+    "color": "#cf4646",
+    "backgroundColor": "#fff",
+    "selectedColor": "#000",
+    "borderStyle": "black"
   }
 }

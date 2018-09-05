@@ -10,7 +10,7 @@
 	"miniprogramRoot": "./dist/",
 	"compileType": "miniprogram",
 	"appid": "wx0f192c837ad9ad23",
-	"projectname": "my-project-jump",
+	"projectname": "mpvue-init",
 	"condition": {
 		"search": {
 			"current": -1,
